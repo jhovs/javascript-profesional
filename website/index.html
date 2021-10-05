@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <title>PlatziMediaPlayer.js</title>
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="./assets/index.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>PlatziMediaPlayer.js LOCAL</h1>
+      <p>An extensible media player.</p>
+    </header>
+
+    <main class="container">
+      <video class="movie">
+        <source src="./assets/BigBuckBunny.mp4" />
+      </video>
+
+      <button id="playButton">Play/Pause</button>
+
+    </main>
+
+    <script>
+      // const video = document.querySelector('video');
+      // const button = document.querySelector('button');
+
+      // function MediaPlayer (config) {
+      //   this.media = config.el;
+      // }
+
+      // MediaPlayer.prototype.play = function() {
+      //   this.media.play();
+      // }
+
+      // const player = new MediaPlayer({el: video});
+      // button.onclick = () => video.play();
+    </script>
+
+    <script>
+    class MediaPlayer{
+        constructor(video){
+            this.video = video
+        }
+
+        play(){
+            this.video.play()
+        }
+
+        pause(){
+            this.video.pause()
+        }
+
+        togglePlay(){
+            if(this.video.paused){
+                this.video.play()
+            }else{
+                this.video.pause()
+            }
+        }
+    }
+
+    const video = document.querySelector('video');
+    const button = document.querySelector('button');
+    button.onclick = () => player.togglePlay();
+    //const player = new MediaPlayer({ el:video }); // no entiendo esta parte: que es "el:"
+    const player = new MediaPlayer(video)
+    </script>
+
+
+
+
+    <script type="module" src="/assets/index.ts"></script>
+  </body>
+</html>

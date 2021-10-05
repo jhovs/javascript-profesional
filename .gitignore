@@ -4,6 +4,9 @@
 # Ignora la carpeta node_modules
 node_modules
 
+# Ignora la carpeta .vscode
+.vscode
+
 # Ignora todos los archivos de texto
 *.txt
 
@@ -16,3 +19,6 @@ node_modules
 #Imagenes 
 *.jpg
 *.png
+
+#Video 
+*.mp4
