@@ -13,40 +13,41 @@
     <script>
     //#### Closures #### 
 
-    //--> printColor //funcion esta disponible globalmente 
-        // let color = 'green';
+    // //--> printColor //funcion esta disponible globalmente 
+    //     let color = 'green';
 
-        // function printColor() {
-        //     console.log(color);
-        // }
+    //     function printColor() {
+    //         console.log(color);
+    //     }
 
-        // printColor();
+    //     printColor();
 
-    //--> printColor con IIFE:
-        // (function(){
-        // let color = 'green';
+    // //--> printColor con IIFE:
+    //     (function(){
+    //     let color = 'green';
 
-        // const printColor = () => console.log(color);
-        // printColor();
+    //     const printColor = () => console.log(color);
+    //     printColor();
 
-        // })();
+    //     })();
 
-    //--> funciones que regresan funciones 
-        // const makeColorPiker = (color) => {
-        //     let colorMessage = `The color is ${color}`;
-        //     return () => console.log(colorMessage);
-        // }
+    // //--> funciones que regresan funciones 
+    //     const makeColorPiker = (color) => {
+    //         let colorMessage = `The color is ${color}`;
+    //         return () => console.log(colorMessage);
+    //     }
 
-        // let greenColorPrinter = makeColorPiker('green');
-        // console.log(greenColorPrinter());
+    //     let greenColorPrinter = makeColorPiker('green');
+    //     console.log(greenColorPrinter());
 
-    //--> Funciones privadas 
-        // const counter = {
-        //     count: 3
-        // }
-        // console.log(counter.count);
+    // //--> Funciones privadas 
+    //     //Funcion que permite ver el count 
+    //     const counter = {
+    //         count: 3
+    //     }
+    //     console.log(counter.count);
     
-        //
+        //creamos una función privada en donde no de ve el count y eso se le llama closure 
         function makeCounter(n){
             let count = n;
 

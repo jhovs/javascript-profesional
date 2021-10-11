@@ -1,23 +1,42 @@
-class MediaPlayer{
-    constructor(video){
-        this.video = video
-    }
+function MediaPlayer(config){
+    this.media = config.el;
+    this.plugins = config.plugins || [];
 
-    play(){
-        this.video.play()
-    }
+    this._initPlugins();
+  }
 
-    pause(){
-        this.video.pause()
-    }
+MediaPlayer.prototype._initPlugins = function (){
+    this.plugins.forEach(plugin =>{
+    plugin.run(this);
+    });
+};
 
-    togglePlay(){
-        if(this.video.paused){
-            this.video.play()
-        }else{
-            this.video.pause()
-        }
-    }
+MediaPlayer.prototype.play = function () {
+this.media.play();
+}
+
+MediaPlayer.prototype.pause = function () {
+this.media.pause();
+}
+
+MediaPlayer.prototype.togglePlay = function () {
+if(this.media.paused){
+    this.play();
+} else {
+    this.pause();
+}
+};
+
+MediaPlayer.prototype.mute = function () {
+    this.media.muted = true;
+}
+
+MediaPlayer.prototype.unmute = function () {
+    this.media.unmute = false;
+}
+
+MediaPlayer.prototype.toggleMute = function () {
+    this.media.muted = !this.media.muted
 }
 
 export default MediaPlayer;
